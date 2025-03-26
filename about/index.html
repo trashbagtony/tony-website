@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Trash Bag Tony - About</title>
+  <title>Trash Bag Tony - Gallery</title>
   <style>
     * {
       margin: 0;
@@ -53,85 +53,49 @@
       color: black;
       text-decoration: none;
       font-weight: bold;
-      font-size: 18px;
     }
 
     nav a:hover {
-      text-decoration: none;
-      color: #555555;
+      text-decoration: underline;
     }
 
-    .container {
-      padding: 20px;
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
     }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .about-text {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .about-image {
-      margin: 0 auto 30px;
-      max-width: 250px;
-    }
-
-    .about-image img {
+    .gallery img {
       width: 100%;
-      height: auto;
-      display: block;
+      border-radius: 8px;
+    }
+
+    .button-container {
+      margin-top: 40px;
+    }
+
+    .follow-button {
+      background-color: white;
+      color: black;
+      border: 2px dotted black;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .follow-button:hover {
+      background-color: black;
+      color: white;
     }
 
     footer {
       background-color: white;
       padding: 20px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
       width: 100%;
       text-align: center;
-    }
-
-    .social-links {
-      margin: 15px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .social-links a {
-      display: inline-flex;
-      align-items: center;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 8px 15px;
-      border: 2px dashed black;
-      border-radius: 8px;
-      background-color: #f5f5f5;
-    }
-
-    .social-links a:hover {
-      background-color: #ebebeb;
-      transform: rotate(2deg);
-    }
-
-    .spacer {
-      height: 150px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -145,31 +109,32 @@
     <a href="/gallery">Gallery</a>
   </nav>
 
-  <div class="container">
-    <div class="about-text">
-      <p><strong>He's not built different — he is different.</strong></p>
-
-      <p>While other possums were dodging headlights, Tony was running dice games behind the liquor store, and selling knockoff vape carts to minors. He turned Cash App requests into business deals, and scratch-offs into seed funding.</p>
-
-      <p>He doesn't follow roadmaps, he drives over ’em in a ’98 Buick with no plates.</p>
-
-      <p><strong>Does he know what crypto is?</strong> Not really.</p>
-
-      <p><strong>Did he launch a coin anyway?</strong> Absolutely.</p>
-    </div>
-
-    <div class="about-image">
-      <img src="/images/tony_phone.jpeg" alt="Tony on his phone">
-    </div>
+  <div class="gallery">
+    <img src="/images/tony1.png" alt="Tony Image 1">
+    <img src="/images/tony2.png" alt="Tony Image 2">
+    <img src="/images/tony3.png" alt="Tony Image 3">
+    <img src="/images/tony4.png" alt="Tony Image 4">
+    <img src="/images/tony5.png" alt="Tony Image 5">
+    <img src="/images/tony6.png" alt="Tony Image 6">
+    <img src="/images/tony7.png" alt="Tony Image 7">
+    <img src="/images/tony8.png" alt="Tony Image 8">
+    <img src="/images/tony9.png" alt="Tony Image 9">
+    <img src="/images/tony10.png" alt="Tony Image 10">
+    <img src="/images/tony11.png" alt="Tony Image 11">
+    <img src="/images/tony12.png" alt="Tony Image 12">
+    <img src="/images/tony13.png" alt="Tony Image 13">
+    <img src="/images/tony14.png" alt="Tony Image 14">
+    <img src="/images/tony15.png" alt="Tony Image 15">
   </div>
 
-  <div class="spacer"></div>
+  <div class="button-container">
+    <a href="https://x.com" target="_blank">
+      <button class="follow-button">Follow Tony on X</button>
+    </a>
+  </div>
 
   <footer>
-    <div class="social-links">
-      <a href="https://x.com/trashbagtony" target="_blank">Follow Tony on X</a>
-    </div>
-    <p>© 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice</p>
+    © 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice
   </footer>
 </body>
 </html>
