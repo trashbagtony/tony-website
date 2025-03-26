@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trash Bag Tony – About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trash Bag Tony - About</title>
   <style>
     * {
       margin: 0;
@@ -53,59 +53,122 @@
       color: black;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      color: #555555;
+    }
+
+    .container {
+      padding: 20px;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-text {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .about-image {
-      max-width: 100%;
+      margin: 0 auto 30px;
+      max-width: 250px;
+    }
+
+    .about-image img {
+      width: 100%;
       height: auto;
-      margin-top: 30px;
+      display: block;
     }
 
     footer {
-      margin-top: 60px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .follow-button {
-      padding: 10px 20px;
-      font-weight: bold;
-      border: 2px dashed black;
       background-color: white;
-      cursor: pointer;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
     }
 
-    .follow-button:hover {
-      background-color: black;
-      color: white;
+    .social-links {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 15px;
+      border: 2px dashed black;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+    }
+
+    .social-links a:hover {
+      background-color: #ebebeb;
+      transform: rotate(2deg);
+    }
+
+    .spacer {
+      height: 150px;
     }
   </style>
 </head>
 <body>
   <nav>
     <div class="profile-pic">
-      <img src="../images/profile_picture.jpeg" alt="Trash Bag Tony Profile" />
+      <img src="/images/profile_picture.jpeg" alt="Trash Bag Tony Profile">
     </div>
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/gallery">Gallery</a>
   </nav>
 
-  <p><strong>He's not built different — he is different.</strong></p>
-  <p>While other possums were dodging headlights, Tony was running dice games behind the liquor store, and selling knockoff vape carts to minors. He turned Cash App requests into business deals, and scratch-offs into seed funding.</p>
-  <p>He doesn’t follow roadmaps, he drives over ’em in a ’98 Buick with no plates.</p>
-  <p><strong>Does he know what crypto is?</strong> Not really.</p>
-  <p><strong>Did he launch a coin anyway?</strong> Absolutely.</p>
+  <div class="container">
+    <div class="about-text">
+      <p><strong>He's not built different — he is different.</strong></p>
 
-  <img src="../images/tony_phone.jpeg" alt="Tony on his phone" class="about-image" />
-  <div style="text-align: center;">Tony on his phone</div>
+      <p>While other possums were dodging headlights, Tony was running dice games behind the liquor store, and selling knockoff vape carts to minors. He turned Cash App requests into business deals, and scratch-offs into seed funding.</p>
+
+      <p>He doesn't follow roadmaps, he drives over ’em in a ’98 Buick with no plates.</p>
+
+      <p><strong>Does he know what crypto is?</strong> Not really.</p>
+
+      <p><strong>Did he launch a coin anyway?</strong> Absolutely.</p>
+    </div>
+
+    <div class="about-image">
+      <img src="/images/tony_phone.jpeg" alt="Tony on his phone">
+    </div>
+  </div>
+
+  <div class="spacer"></div>
 
   <footer>
-    <button class="follow-button" onclick="window.open('https://twitter.com/trashbagtony', '_blank')">Follow Tony on X</button>
+    <div class="social-links">
+      <a href="https://x.com/trashbagtony" target="_blank">Follow Tony on X</a>
+    </div>
     <p>© 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice</p>
   </footer>
 </body>
