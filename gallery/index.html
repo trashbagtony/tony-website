@@ -72,14 +72,14 @@
         .gallery {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 8px;
             margin: 20px auto;
-            max-width: 750px;
+            max-width: 650px;
         }
         
         .gallery-item {
             position: relative;
-            width: 75%;
+            width: 95%;
             margin: 0 auto;
             cursor: pointer;
         }
@@ -261,18 +261,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
-            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const galleryItems = document.querySelectorAll('.gallery-item');
             const prevBtn = document.querySelector('.lightbox-prev');
             const nextBtn = document.querySelector('.lightbox-next');
             const closeBtn = document.querySelector('.lightbox-close');
             
             let currentIndex = 0;
-            const images = Array.from(galleryItems).map(img => img.src);
-            const alts = Array.from(galleryItems).map(img => img.alt);
+            const images = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.src);
+            const alts = Array.from(document.querySelectorAll('.gallery-item img')).map(img => img.alt);
             
-            // Open lightbox when clicking on an image
-            galleryItems.forEach((img, index) => {
-                img.addEventListener('click', function() {
+            // Open lightbox when clicking on a gallery item
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
                     currentIndex = index;
                     updateLightboxImage();
                     lightbox.classList.add('active');
