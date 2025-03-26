@@ -150,16 +150,18 @@
         
         .lightbox-content {
             position: relative;
-            max-width: 80%;
-            max-height: 80%;
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
         }
         
         .lightbox-img {
-            display: block;
             max-width: 100%;
-            max-height: 80vh;
-            margin: 0 auto;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-height: 100%;
+            object-fit: contain;
         }
         
         .lightbox-prev,
@@ -167,25 +169,26 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 50%;
             color: white;
-            font-size: 20px;
+            font-size: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             transition: background-color 0.3s;
+            z-index: 1010;
         }
         
         .lightbox-prev {
-            left: -60px;
+            left: 20px;
         }
         
         .lightbox-next {
-            right: -60px;
+            right: 20px;
         }
         
         .lightbox-prev:hover,
@@ -195,16 +198,19 @@
         
         .lightbox-close {
             position: absolute;
-            top: -40px;
-            right: 0;
-            width: 30px;
-            height: 30px;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
             color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
             font-size: 30px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1010;
         }
 </style>
 </head>
