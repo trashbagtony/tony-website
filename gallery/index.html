@@ -81,6 +81,7 @@
             position: relative;
             width: 75%;
             margin: 0 auto;
+            cursor: pointer;
         }
         
         .gallery-item img {
@@ -129,7 +130,83 @@
         .spacer {
             height: 150px;
         }
-    </style>
+            /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        .lightbox-img {
+            display: block;
+            max-width: 100%;
+            max-height: 80vh;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .lightbox-prev {
+            left: -60px;
+        }
+        
+        .lightbox-next {
+            right: -60px;
+        }
+        
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+</style>
 </head>
 <body>
     <nav>
@@ -163,11 +240,95 @@
     
     <div class="spacer"></div>
     
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <div class="lightbox-close">&times;</div>
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-prev">&lt;</div>
+            <div class="lightbox-next">&gt;</div>
+        </div>
+    </div>
+    
     <footer>
         <div class="social-links">
             <a href="https://x.com/trashbagtony" target="_blank">Follow Tony on X</a>
         </div>
         <p>© 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const prevBtn = document.querySelector('.lightbox-prev');
+            const nextBtn = document.querySelector('.lightbox-next');
+            const closeBtn = document.querySelector('.lightbox-close');
+            
+            let currentIndex = 0;
+            const images = Array.from(galleryItems).map(img => img.src);
+            const alts = Array.from(galleryItems).map(img => img.alt);
+            
+            // Open lightbox when clicking on an image
+            galleryItems.forEach((img, index) => {
+                img.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateLightboxImage();
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            
+            // Update lightbox image based on currentIndex
+            function updateLightboxImage() {
+                lightboxImg.src = images[currentIndex];
+                lightboxImg.alt = alts[currentIndex];
+            }
+            
+            // Next button functionality
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightboxImage();
+            });
+            
+            // Previous button functionality
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightboxImage();
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+            
+            // Close when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Close button
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            // Close with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight' && lightbox.classList.contains('active')) {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateLightboxImage();
+                } else if (e.key === 'ArrowLeft' && lightbox.classList.contains('active')) {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateLightboxImage();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
