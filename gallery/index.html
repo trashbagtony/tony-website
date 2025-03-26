@@ -53,49 +53,81 @@
       color: black;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      text-decoration: none;
+      color: #555555;
+    }
+
+    .container {
+      padding: 20px;
+      margin-bottom: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      padding: 0 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin: 30px auto;
+      max-width: 800px;
     }
 
-    .gallery img {
+    .gallery-item {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .gallery-item img {
       width: 100%;
-      border-radius: 8px;
-    }
-
-    .button-container {
-      margin-top: 40px;
-    }
-
-    .follow-button {
-      background-color: white;
-      color: black;
-      border: 2px dotted black;
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-
-    .follow-button:hover {
-      background-color: black;
-      color: white;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
     }
 
     footer {
       background-color: white;
       padding: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
       width: 100%;
       text-align: center;
-      margin-top: 60px;
+    }
+
+    .social-links {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 15px;
+      border: 2px dashed black;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+    }
+
+    .social-links a:hover {
+      background-color: #ebebeb;
+      transform: rotate(2deg);
+    }
+
+    .spacer {
+      height: 150px;
     }
   </style>
 </head>
@@ -109,32 +141,33 @@
     <a href="/gallery">Gallery</a>
   </nav>
 
-  <div class="gallery">
-    <img src="/images/tony1.png" alt="Tony Image 1">
-    <img src="/images/tony2.png" alt="Tony Image 2">
-    <img src="/images/tony3.png" alt="Tony Image 3">
-    <img src="/images/tony4.png" alt="Tony Image 4">
-    <img src="/images/tony5.png" alt="Tony Image 5">
-    <img src="/images/tony6.png" alt="Tony Image 6">
-    <img src="/images/tony7.png" alt="Tony Image 7">
-    <img src="/images/tony8.png" alt="Tony Image 8">
-    <img src="/images/tony9.png" alt="Tony Image 9">
-    <img src="/images/tony10.png" alt="Tony Image 10">
-    <img src="/images/tony11.png" alt="Tony Image 11">
-    <img src="/images/tony12.png" alt="Tony Image 12">
-    <img src="/images/tony13.png" alt="Tony Image 13">
-    <img src="/images/tony14.png" alt="Tony Image 14">
-    <img src="/images/tony15.png" alt="Tony Image 15">
+  <div class="container">
+    <div class="gallery">
+      <div class="gallery-item"><img src="/images/tony1.jpeg" alt="Tony Image 1"></div>
+      <div class="gallery-item"><img src="/images/tony2.jpeg" alt="Tony Image 2"></div>
+      <div class="gallery-item"><img src="/images/tony3.jpeg" alt="Tony Image 3"></div>
+      <div class="gallery-item"><img src="/images/tony4.jpeg" alt="Tony Image 4"></div>
+      <div class="gallery-item"><img src="/images/tony5.jpeg" alt="Tony Image 5"></div>
+      <div class="gallery-item"><img src="/images/tony6.jpeg" alt="Tony Image 6"></div>
+      <div class="gallery-item"><img src="/images/tony7.jpeg" alt="Tony Image 7"></div>
+      <div class="gallery-item"><img src="/images/tony8.jpeg" alt="Tony Image 8"></div>
+      <div class="gallery-item"><img src="/images/tony9.jpeg" alt="Tony Image 9"></div>
+      <div class="gallery-item"><img src="/images/tony10.jpeg" alt="Tony Image 10"></div>
+      <div class="gallery-item"><img src="/images/tony11.jpeg" alt="Tony Image 11"></div>
+      <div class="gallery-item"><img src="/images/tony12.jpeg" alt="Tony Image 12"></div>
+      <div class="gallery-item"><img src="/images/tony13.jpeg" alt="Tony Image 13"></div>
+      <div class="gallery-item"><img src="/images/tony14.jpeg" alt="Tony Image 14"></div>
+      <div class="gallery-item"><img src="/images/tony15.jpeg" alt="Tony Image 15"></div>
+    </div>
   </div>
 
-  <div class="button-container">
-    <a href="https://x.com" target="_blank">
-      <button class="follow-button">Follow Tony on X</button>
-    </a>
-  </div>
+  <div class="spacer"></div>
 
   <footer>
-    © 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice
+    <div class="social-links">
+      <a href="https://x.com/trashbagtony" target="_blank">Follow Tony on X</a>
+    </div>
+    <p>© 2025 Trash Bag Tony | No Rights Reserved | This is not financial advice</p>
   </footer>
 </body>
 </html>
