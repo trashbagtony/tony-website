@@ -138,6 +138,22 @@
             background-color: #ebebeb;
             transform: rotate(2deg);
         }
+        @media screen and (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        padding-top: 80px; /* Make room for the profile pic */
+    }
+    
+    .profile-pic {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    nav a {
+        margin: 5px 10px;
+    }
+}
     </style>
 </head>
 <body>
